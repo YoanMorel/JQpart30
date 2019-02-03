@@ -1,21 +1,21 @@
 # Exercice Jquery - Partie 3
 
 **IMPORTANT**
-Vous devez utiliser Jquery pour faire les exercices.
+Vous devez utiliser jQuery pour faire les exercices.
 
 ## Exercice 1
 Construisez une page html avec un bouton et un champ texte dans lequel on affiche le nombre de clics sur le bouton.
 
 ## Exercice 2
-Construisez une page html avec un bouton "+", un bouton "-" et un champ texte dans lequel on augmente ou baisse le chiffre en fonction des boutons cliqués.
+Construisez une page html avec un bouton **+**, un bouton **-** et un champ number qui aura pour valeur 0. Augmenter ou baisser le chiffre dans ce champ en fonction des boutons cliqués.
 
 ## Exercice 3
-Construisez une page html avec un bouton et un champ texte. Le but est de trouver un nombre entre 0 et 100. A chaque réponse la page répond :
+Construisez une page html avec un bouton et un champ number. Le but est de trouver un nombre entre 0 et 100. A chaque réponse la page répond :
 - plus
 - moins
 - correcte
 
-Quand la réponse est trouvée, on obtiens le nombre d'essai que l'on a fait.
+Quand la réponse est trouvée, on obtient le nombre d'essais que l'on a fait.
 
 ## Exercice 4
 Construisez une page html avec 5 boutons et un rectangle. Chaque bouton provoque une action sur le rectangle.
