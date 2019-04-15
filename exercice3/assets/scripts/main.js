@@ -1,20 +1,39 @@
-var rightAnswer = 75;
-var index = 0;
-var answer;
+$(function() {
+  $('#again').hide();
+  var rightAnswer = 0;
+  var index = 0;
+  var answer = 0;
+  var span = $('span');
+  var input = $('input');
 
-$('#answer').click(function() {
-  index++;
-  answer = parseInt($('#answerField').val());
-  if (answer < rightAnswer) {
-    $('span').text('C\'est plus !').fadeIn(1000).fadeOut(1000);
-    $('input').val('');
-  } else if (answer > rightAnswer) {
-    $('span').text('C\'est moins !').fadeIn(1000).fadeOut(1000);
-    $('input').val('');
-  } else if (!answer) {
-    $('span').text('Il faut renseigner un nombre').fadeIn(1000).fadeOut(1000);
-  } else {
-    $('button').hide();
-    $('span').text('Bravo ! Vous avez réussi au bout de ' + index + ' fois.').fadeIn(1000);
+  function getRandomNumber(max) {
+    return Math.floor(Math.random() * Math.floor(max));
   }
+
+  rightAnswer = getRandomNumber(100);
+
+  $('#again').click(function() {
+    location.reload(true);
+  });
+
+  $('#answer').click(function() {
+    index++;
+    answer = parseInt($('#answerField').val());
+    
+    if (isNaN(answer)) {
+      span.text('Diantre ! Ceci n\'est pas un nombre !'); in
+    } else if (answer < rightAnswer) {
+      span.text('C\'est plus !').fadeIn(1000).fadeOut(1000);
+      input.val('');
+    } else if (answer > rightAnswer) {
+      span.text('C\'est moins !').fadeIn(1000).fadeOut(1000);
+      input.val('');
+    } else if (!answer) {
+      span.text('Il faut renseigner un nombre').fadeIn(1000).fadeOut(1000);
+    } else {
+      $('#answer').hide();
+      $('#again').show();
+      span.text('Bravo ! Vous avez réussi au bout de ' + index + ' fois.').fadeIn(1000);
+    }
+  });
 });
