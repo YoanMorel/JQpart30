@@ -10,7 +10,7 @@ $(function() {
     return Math.floor(Math.random() * Math.floor(max));
   }
 
-  rightAnswer = getRandomNumber(100);
+  console.log(rightAnswer = getRandomNumber(101));
 
   $('#again').click(function() {
     location.reload(true);
@@ -19,17 +19,15 @@ $(function() {
   $('#answer').click(function() {
     index++;
     answer = parseInt($('#answerField').val());
-    
+
     if (isNaN(answer)) {
-      span.text('Diantre ! Ceci n\'est pas un nombre !'); in
+      span.text('Diantre ! Ceci n\'est pas un nombre !');
     } else if (answer < rightAnswer) {
       span.text('C\'est plus !').fadeIn(1000).fadeOut(1000);
       input.val('');
     } else if (answer > rightAnswer) {
       span.text('C\'est moins !').fadeIn(1000).fadeOut(1000);
       input.val('');
-    } else if (!answer) {
-      span.text('Il faut renseigner un nombre').fadeIn(1000).fadeOut(1000);
     } else {
       $('#answer').hide();
       $('#again').show();
